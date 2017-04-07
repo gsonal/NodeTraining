@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>ES5-6 Arrow functions</title>
+<script>
+
+//ES6: ECMAScript 6 : introduces Arrow functions
+/*  if(true){
+	let month = 'April'; //not supported in IE browser yet
+	{
+		console.log(month);//prints April on load of page
+	}
+ }
+ console.log(month); // Uncaught ReferenceError: month is not defined
+ */
+ //Babble - compiles ES6 into ES5
+ 
+ //ES5 - arrow functions
+	/* var cars = ['BMW','Audi','Honda','Hyundai'];
+ 	cars.forEach(function(car) {
+ 		console.log(car);
+ 	});
+ 	
+ 	//ES6 [=> is called goes to]
+ 	cars.forEach(car => console.log(car));
+ 	
+ 	cars.forEach((car, index) => console.log(`${car} is at ${index}!`));
+ */
+ 	//different ways to define a function
+ 	//ES5
+ 	function Square(x) {
+ 		return x*x;
+ 	}
+ 	
+ 	//ES5: writing function as a expression
+ 	var Square2 = function Square(x) {
+ 		return x*x;
+ 	}
+ 	
+ 	//ES6 : writing function as a expression
+ 	var Square = (x) => {return x*x};
+ 	var Square = x => x*x; //default single statements assumed as return
+ 	
+ 	
+ 	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

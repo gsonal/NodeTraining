@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+	var socket;
+	
+	function OnLoad() {
+		socket = io.connect();
+		socket.on("messageForClient", function(data) {
+			//console.log("Data from Server: " + data);
+			var div = document.getElementById("divMessages");
+			div.innerHTML = data;
+		});
+		
+	}
+	
+	function OnClick() {
+		var msgForServer = document.getElementById("txtMessage").value;
+		socket.emit("messageFromClient", msgForServer);
+	}
+	
+</script>
+
+</head>
+<body onload="OnLoad();">
+	Enter message here: <input type="text" id="txtMessage" />
+	<input type="button" value="Send" onclick="OnClick()" />
+	
+	<hr/>
+	<div id="divMessages"></div>
+</body>
+</html>

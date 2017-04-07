@@ -1,0 +1,14 @@
+//- extends: mention name of the page you wish to extend in this block page
+//- words in braces will be evaluated - dynamic
+//- after equals sign words become innertHTML data - dynamic
+
+extends layout
+
+block content
+	h2= msg
+	
+	p Welcome to #{data} !
+
+	ul
+	each user in users
+		li= user.name

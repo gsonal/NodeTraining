@@ -1,0 +1,1 @@
+This is a sample data.txt file which will be read in async manner using fs node module.

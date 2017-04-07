@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Page</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+
+<script>
+	$(document).ready(function () {
+		$("#btnSubmit").click(function() {
+			var username = $("#txtUsername").val();
+			var passwd = $("#txtPassword").val();
+			$.post("/login",
+					{uname: username, pwd: passwd})
+				.done(function(err, resp, status){
+						if(resp === "success") {
+							alert("You have logged in successfully !");
+						}
+					})
+				.fail(function(xhr, status, error) {
+					if (error) {
+						console.log("Error occurred in login");
+						alert("Please check your username and password !");
+					} 
+				});
+			
+		}); //eof submit
+	}); //eof ready
+
+</script>
+</head>
+<body>
+	<h1>
+		Welcome to Login Page !
+	</h1>
+	Name: <input type="text" id="txtUsername" class="form-control" /> <br/>
+	Password: <input type="password" id="txtPassword" class="form-control" /> <br/>
+	<input type="button" value="Submit" id="btnSubmit" class="btn btn-Success" />
+	
+	
+</body>
+</html>

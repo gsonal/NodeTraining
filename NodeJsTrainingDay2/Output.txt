@@ -1,0 +1,5 @@
+Note: Some of these examples are actually Duplex streams that implement the Writable interface.
+
+All Writable streams implement the interface defined by the stream.Writable class.
+
+While specific instances of Writable streams may differ in various ways, all Writable streams follow the same fundamental usage pattern as illustrated in the example.

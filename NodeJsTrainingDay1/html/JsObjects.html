@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>Node JS Training - Session 1</title>
+
+<script>
+/*  //Literal Syntax
+ var person = {
+		 Name:'Sumeet', 
+		 Location: 'Bamgalore',
+		 isMCT: true,
+		 citiesVisited: ['Noida', 'Gurugram'],
+		 Address: {
+			 FlatNo:202,
+			 Block:'A2',
+			 City:'Pune'
+		 },
+		 Details: function () {
+			 console.log("some function data");
+		 }
+ };
+ //to access city, you use person.Address.City
+ //single/double quotes are not mandatory in javascript, but mandatory in json
+ 
+ console.log(JSON.stringify(person));
+ 
+ //convert js object to json
+ var jsonData = JSON.stringify(person);
+ 
+ //convert json to Javascript object
+ //functions will be ignored by stringify method
+ var samePerson = JSON.parse(jsonData); */
+ 
+ 
+ //Constructor Syntax: use function to initilize every object a type another object (there is no class in ES5, there will be classes introduced in ES6)
+ function Car() {
+	 this.Name = "i20";
+	 this.Speed = 200;
+	 this.accelerate = function() {
+		 console.log("VVRRRROOOMMM..@" + this.Speed + "kmph !")
+	 }
+ }
+
+ /* var carObj = new Car();
+ carObj.accelerate(); */
+ 
+ //Inheritance in JS --- Prototypical inheritance - will be used in Node JS
+ //Here, one object inherits from another object
+ //Every object has a default property called prototype
+ 
+ function JamesBondCar() {
+	 this.canFly = true;
+	 this.canSubmerge = true;
+ }
+ 
+ 
+ JamesBondCar.prototype = new Car();
+ //With this syntax,  every instance of a JamesBondCar is created, it will also have properties of a car. 
+ //Internally protptype is just an object, so in future if we say, JamesBondCar.prototype = new Bus();, the new instances will now be having Bus object properties
+ var newJBCar = new JamesBondCar();
+
+ //multiple inheritance is not possible but we can extend the existing prototype (Car in this instance is extended, but not all instances of Car will get this new property)
+ JamesBondCar.prototype.Price = 450000;
+ var newJBCar2 = new JamesBondCar();
+ 
+ 
+ 
+</script>
+</head>
+<body>
+
+</body>
+</html>
